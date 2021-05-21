@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "https://cocoonmedicalaustralia.com.au/*"
+  to = "https://www.cocoonmedicalaustralia.com.au/"
+  status = 301
