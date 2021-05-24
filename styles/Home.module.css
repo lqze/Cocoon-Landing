@@ -40,7 +40,7 @@
 }
 
 .video_wrapper {
-  max-height: 820px;
+  max-height: 892px;
   overflow: hidden;
 }
 .video {
@@ -69,6 +69,16 @@
 @media screen and (min-width: 2120px) {
   .video iframe {
     top: -30%;
+  }
+}
+@media screen and (min-width: 2320px) {
+  .video iframe {
+    top: -35%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .video {
+    display: none !important;
   }
 }
 
@@ -275,7 +285,7 @@
     margin-bottom: 2rem;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 720px) {
   .intro_content {
     padding: 2rem 0;
   }
