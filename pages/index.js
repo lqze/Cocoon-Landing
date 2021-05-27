@@ -54,9 +54,8 @@ range of fast, reliable and efficient medical aesthetic treatments.`
     </div>
   )
 }
-
 const VideoBlock = () => {
-  const youtubeUrl = "https://www.youtube.com/embed/eFn9u1APyd8?autohide=1&autoplay=0&cc_load_policy=0&controls=0&enablejsapi=1&fs=0&modestbranding=1&origin=https%3A%2F%2Fwww.cocoonmedical.com&iv_load_policy=1&loop=1&showinfo=0&rel=0&wmode=opaque&hd=1&mute=1&widgetid=1";
+  const youtubeUrl = "https://www.youtube.com/embed/1yWgTz4xL8I?autohide=1&autoplay=0&cc_load_policy=0&controls=0&enablejsapi=1&fs=0&modestbranding=1&origin=https%3A%2F%2Fwww.cocoonmedical.com&iv_load_policy=1&loop=1&showinfo=0&rel=0&wmode=opaque&hd=1&mute=1&widgetid=1";
   return <div className={styles.video_wrapper}>
     <div className={styles.video} style={{"--aspect-ratio": 3 / 4}}>
       <ReactPlayer url={youtubeUrl} loop muted playing />
