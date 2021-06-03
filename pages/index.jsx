@@ -2,6 +2,8 @@ import Head from 'next/head'
 import ReactPlayer from 'react-player/youtube'
 import styles from '../styles/Home.module.css'
 
+import axios from "axios"
+
 // image + text
 const Card = (props) => {
   const { image, link, children } = props;
@@ -63,12 +65,68 @@ const VideoBlock = () => {
   </div>
 }
 
+const Form = () => {
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target)
+
+    axios.post('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
+      body: formData
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+ return <div className={styles.form}>
+   <h2>Contact Us</h2>
+   <form onSubmit={(e) => handleSubmit(e)} action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+     
+
+      <input type="hidden" name="debug" value={1} />
+
+      <input type="hidden" name="debugEmail" value="lutronic@lutronicaustralia.com.au" /> 
+      <input type="hidden" name="oid" value="00D6g000001WWQ9" />
+      <input type="hidden" name="retURL" value="http://localhost:3000" />
+      <fieldset>
+        <label htmlFor="first_name">First Name</label><input required placeholder="FIRST NAME" id="first_name" maxLength="40" name="first_name" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+      <label htmlFor="last_name">Last Name</label><input placeholder="LAST NAME" id="last_name" maxLength="80" name="last_name" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+         <label htmlFor="company">Company</label><input placeholder="COMPANY" id="company" maxLength="40" name="company" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+         <label htmlFor="email">Email</label><input required placeholder="EMAIL" id="email" maxLength="80" name="email" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+          <label htmlFor="phone">Phone</label><input required placeholder="PHONE" id="phone" maxLength="40" name="phone" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+         <label htmlFor="city">City</label><input required placeholder="CITY" id="city" maxLength="40" name="city" size="20" type="text" />
+      </fieldset>
+      <fieldset>
+          <label htmlFor="state">State</label><input required placeholder="STATE" id="state" maxLength="20" name="state" size="20" type="text" />
+      </fieldset>
+      <div className={styles.form_submit}>
+        <input type="submit" name="submit" value="submit" />
+      </div>
+    </form>
+ </div>
+}
+
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
         <title>Cocoon Medical Australia</title>
+        <meta httpEquiv="Content-type" content="text/html; charset=UTF-8" />
         <meta name="description" content="Cocoon Medical Australia Landing Page" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet" /> 
@@ -94,6 +152,8 @@ export default function Home() {
             </Card>
           </div>
           <Content />
+
+          <Form />
         </div>
       </main>
 
