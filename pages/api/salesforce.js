@@ -39,12 +39,13 @@ export default async function handler(req, res) {
       form,
       {
         headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
           ...formHeaders,
-          "Content-Type": "text/html; charset=UTF-8",
         },
       }
     )
     .then((response) => {
+      console.log(response);
       if (response.status === 200) {
         return res.status(200).json({ msg: "success!", data: response.data });
       }

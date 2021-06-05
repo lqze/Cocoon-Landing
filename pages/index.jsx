@@ -105,15 +105,19 @@ const Form = () => {
   return (
     <div className={styles.form}>
       <h2>Contact Us</h2>
-      <form
+      {/* <form
         method="POST"
         action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
-      >
-        {/* <form method="POST" onSubmit={(e) => handleSubmit(e)}> */}
+      > */}
+      <form method="POST" onSubmit={(e) => handleSubmit(e)}>
         <input type="hidden" name="debug" value={1} />
         <input type="hidden" name="debugEmail" value="caleb.fetzer@gmail.com" />
         <input type="hidden" name="oid" value="00D6g000001WWQ9" />
-        <input type="hidden" name="retURL" value="http://localhost:3000" />
+        <input
+          type="hidden"
+          name="retURL"
+          value="https://deploy-preview-1--cocoon-landing-au.netlify.app/"
+        />
         <fieldset>
           <label htmlFor="first_name">
             <input
