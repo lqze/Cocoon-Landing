@@ -113,7 +113,7 @@ const Form = () => {
           value="lutronic@lutronicaustralia.com.au"
         /> */}
         <input type="hidden" name="oid" value="00D6g000001WWQ9" />
-        <input type="hidden" name="retURL" value="http://localhost:3000" />
+        <input type="hidden" name="retURL" value="http://" />
         <fieldset>
           <label htmlFor="first_name">
             <input

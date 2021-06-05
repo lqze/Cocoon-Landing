@@ -359,12 +359,13 @@
 .form_notification {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   opacity: 0;
   transition: opacity 0.15s ease;
   padding: 1rem;
   text-align: center;
   margin-bottom: 0.3rem;
+  transform: translateX(-50%);
 }
 .form_notification[data-status="loading"],
 .form_notification[data-status="success"],
