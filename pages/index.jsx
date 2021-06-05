@@ -110,8 +110,8 @@ const Form = () => {
         action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
       >
         {/* <form method="POST" onSubmit={(e) => handleSubmit(e)}> */}
-        <input type="hidden" name="debug" value={1} />
-        <input type="hidden" name="debugEmail" value="caleb.fetzer@gmail.com" />
+        {/* <input type="hidden" name="debug" value={1} />
+        <input type="hidden" name="debugEmail" value="caleb.fetzer@gmail.com" /> */}
         <input type="hidden" name="oid" value="00D6g000001WWQ9" />
         <input
           type="hidden"
