@@ -272,7 +272,7 @@ export default function Home() {
               <span>DEFINE</span>
             </Card>
             <Card
-              image="images/products/elysion.jpg"
+              image="images/products/primelase.png"
               link="https://www.advancedcosmeceuticals.com.au/wp-content/uploads/Primelase-B2B-Brochure.pdf"
             >
               <p>
@@ -281,7 +281,7 @@ export default function Home() {
               <span>EXCELLENCE</span>
             </Card>
             <Card
-              image="images/products/primelase.png"
+              image="images/products/elysion.jpg"
               link="https://www.advancedcosmeceuticals.com.au/wp-content/uploads/Elysion-pro-B2B_AUS.pdf"
             >
               <p>
