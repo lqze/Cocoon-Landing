@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-nested-ternary */
 import React, { useState } from "react";
 import Head from "next/head";
@@ -212,6 +213,20 @@ const Form = () => {
             />
           </label>
         </fieldset>
+        <div className={styles.formCheckbox} style={{ gridColumn: `1 / -1` }}>
+          <p>What device(s) are you interested in?*</p>
+          <input
+            type="checkbox"
+            name="Cooltech Define"
+            value="Cooltech Define"
+          />
+          <label htmlFor="Cooltech Define">Cooltech Define</label>
+          <input type="checkbox" name="Primelase" value="Primelase" />
+          <label htmlFor="Primelase">Primelase</label>
+          <input type="checkbox" name="Elysion-Pro" value="Elysion-Pro" />
+          <label htmlFor="Elysion-Pro">Elysion-Pro</label>
+        </div>
+
         <div className={styles.form_submit}>
           <input type="submit" name="submit" value="submit" />
         </div>

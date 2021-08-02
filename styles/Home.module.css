@@ -317,7 +317,7 @@
   }
 }
 
-.form input {
+.form input:not([type="checkbox"]) {
   outline: none;
   border: none;
   width: 100%;
@@ -347,6 +347,7 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.15s ease;
+  min-height: 45.2px;
 }
 
 .form_submit input:hover {
@@ -371,4 +372,12 @@
 .form_notification[data-status="success"],
 .form_notification[data-status="error"] {
   opacity: 1;
+}
+
+.formCheckbox {
+  grid-column: 1 / -1;
+}
+
+.formCheckbox label {
+  margin-right: 1rem;
 }
