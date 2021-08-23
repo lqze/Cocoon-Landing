@@ -149,7 +149,7 @@ const Form = () => {
             />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset style={{ gridColumn: `1 / -1` }}>
           <label htmlFor="company">
             <input
               placeholder="COMPANY"
@@ -213,7 +213,7 @@ const Form = () => {
             />
           </label>
         </fieldset>
-        <div className={styles.formCheckbox} style={{ gridColumn: `1 / -1` }}>
+        <div className={styles.formCheckbox} style={{ gridColumn: `1` }}>
           <p>What device(s) are you interested in?*</p>
           <input
             type="checkbox"
@@ -225,6 +225,23 @@ const Form = () => {
           <label htmlFor="Primelase">Primelase</label>
           <input type="checkbox" name="Elysion-Pro" value="Elysion-Pro" />
           <label htmlFor="Elysion-Pro">Elysion-Pro</label>
+        </div>
+        <div className={styles.formCheckbox} style={{ gridColumn: `2` }}>
+          <p>Tell us about yourself:*</p>
+          <input
+            id="person"
+            type="radio"
+            name="enquiry-person-type"
+            value="person"
+          />
+          <label htmlFor="Primelase">Are you a patient?</label>
+          <input
+            id="service-provider"
+            type="radio"
+            name="enquiry-person-type"
+            value="service-provider"
+          />
+          <label htmlFor="Elysion-Pro">Are you a service provider?</label>
         </div>
 
         <div className={styles.form_submit}>
