@@ -85,19 +85,19 @@ const Form = () => {
       myBody[key] = value;
     }
     axios
-      .post("/api/salesforce", {
+      .post("/api/contactform", {
         ...myBody,
       })
       .then((response) => {
+        setIsLoading(false);
         if (response.status === 200) {
-          setIsLoading(false);
           setIsSuccess(true);
         } else {
           setIsError(true);
-          setIsLoading(false);
         }
       })
       .catch((err) => {
+        setIsError(true);
         console.log(err);
         setIsLoading(false);
       });
@@ -106,14 +106,7 @@ const Form = () => {
   return (
     <div className={styles.form}>
       <h2>Contact Us</h2>
-      <form
-        method="POST"
-        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
-      >
-        {/* <form method="POST" onSubmit={(e) => handleSubmit(e)}> */}
-        {/* <input type="hidden" name="debug" value={1} />
-        <input type="hidden" name="debugEmail" value="caleb.fetzer@gmail.com" /> */}
-        <input type="hidden" name="oid" value="00D6g000001WWQ9" />
+      <form method="POST" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="hidden"
           name="website"
@@ -228,17 +221,12 @@ const Form = () => {
         </div>
         <div className={styles.formCheckbox} style={{ gridColumn: `2` }}>
           <p>Tell us about yourself:*</p>
-          <input
-            id="person"
-            type="radio"
-            name="enquiry-person-type"
-            value="person"
-          />
+          <input id="person" type="radio" name="enquiry-type" value="person" />
           <label htmlFor="Primelase">Are you a patient?</label>
           <input
             id="service-provider"
             type="radio"
-            name="enquiry-person-type"
+            name="enquiry-type"
             value="service-provider"
           />
           <label htmlFor="Elysion-Pro">Are you a service provider?</label>
