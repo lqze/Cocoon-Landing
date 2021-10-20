@@ -5,16 +5,20 @@ export default async function (req, res) {
   const nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
     port: 587,
-    host: "smtp.ethereal.email",
+    host: "smtp.office365.com",
     auth: {
       user: EMAIL_USER,
       pass: EMAIL_PW,
     },
-    secure: process.env.NODE_ENV === "production",
+    tls: {
+      ciphers: "SSLv3",
+    },
+    requireTLS: true,
+    secure: false,
   });
   const mailData = {
     from: EMAIL_USER,
-    to: EMAIL_USER,
+    to: "info@cocoonmedicalaustralia.com.au",
     subject: `Lead from Cocoon Medical Australia contact form`,
     text: `
       ${Object.keys(req.body)
@@ -71,7 +75,7 @@ export default async function (req, res) {
 </table>
 `,
   };
-  transporter.sendMail(mailData, (err, info) => {
+  transporter.sendMail(mailData, (err, _info) => {
     if (err) {
       console.log(err);
       res.status(500).send("Error");
