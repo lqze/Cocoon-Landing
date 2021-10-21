@@ -18,7 +18,7 @@ export default async function (req, res) {
   });
   const mailData = {
     from: EMAIL_USER,
-    to: "info@cocoonmedicalaustralia.com.au",
+    to: "hello@advancedcosmeceuticals.com.au",
     subject: `Lead from Cocoon Medical Australia contact form`,
     text: `
       ${Object.keys(req.body)
